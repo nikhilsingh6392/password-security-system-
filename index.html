@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Local password strength analyzer and secure password generator.">
+  <title>Sentinel | Password Security Checker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">S</span><span>SENTINEL<small>PERSONAL SECURITY LAB</small></span></a>
+    <div class="top-status"><span class="status-dot"></span> LOCAL ANALYSIS ACTIVE</div>
+  </header>
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow"><span></span> CYBERSECURITY TOOLKIT / 01</div>
+      <h1>Make your password<br><em>hard to crack.</em></h1>
+      <p>Analyze password strength, understand weaknesses, and generate stronger credentials. Your password stays on this device.</p>
+    </section>
+    <section class="workspace">
+      <article class="panel analyzer">
+        <div class="panel-heading"><div><span class="kicker">01 / ANALYZER</span><h2>Password analysis</h2></div><span class="pill">PRIVATE BY DESIGN</span></div>
+        <label for="password">ENTER A PASSWORD</label>
+        <div class="password-wrap">
+          <input id="password" type="password" autocomplete="new-password" placeholder="Type a password to analyze..." spellcheck="false">
+          <button id="togglePassword" class="icon-button" type="button" aria-label="Show password">SHOW</button>
+        </div>
+        <div class="meter-head"><span>STRENGTH SCORE</span><strong id="score">—</strong></div>
+        <div class="meter"><div id="meterFill"></div></div>
+        <div class="strength-row"><strong id="strengthLabel">Waiting for input</strong><span id="strengthHint">Enter a password above</span></div>
+        <div class="stats">
+          <div><span>EST. ENTROPY</span><strong id="entropy">—</strong><small>bits</small></div>
+          <div><span>CHARACTERS</span><strong id="length">0</strong><small>total</small></div>
+          <div><span>CHARACTER SET</span><strong id="pool">0</strong><small>possible symbols</small></div>
+        </div>
+        <div class="section-label">SECURITY CHECKLIST</div>
+        <ul id="checks" class="checks">
+          <li data-check="length"><span class="check-icon">○</span> At least 12 characters</li>
+          <li data-check="upper"><span class="check-icon">○</span> Uppercase letters</li>
+          <li data-check="lower"><span class="check-icon">○</span> Lowercase letters</li>
+          <li data-check="number"><span class="check-icon">○</span> Numbers</li>
+          <li data-check="symbol"><span class="check-icon">○</span> Special characters</li>
+          <li data-check="common"><span class="check-icon">○</span> Avoids common passwords</li>
+          <li data-check="sequence"><span class="check-icon">○</span> Avoids obvious sequences</li>
+        </ul>
+        <div class="section-label">RECOMMENDATIONS</div>
+        <div id="recommendations" class="recommendations"><p>Recommendations will appear as you type.</p></div>
+      </article>
+      <aside class="side-column">
+        <article class="panel generator">
+          <div class="panel-heading"><div><span class="kicker">02 / GENERATOR</span><h2>Build a strong one</h2></div><span class="spark">✳</span></div>
+          <div class="range-label"><label for="lengthRange">PASSWORD LENGTH</label><strong id="rangeValue">20</strong></div>
+          <input id="lengthRange" class="range" type="range" min="12" max="40" value="20">
+          <div class="options">
+            <label><input id="genUpper" type="checkbox" checked> Uppercase</label>
+            <label><input id="genLower" type="checkbox" checked> Lowercase</label>
+            <label><input id="genNumbers" type="checkbox" checked> Numbers</label>
+            <label><input id="genSymbols" type="checkbox" checked> Symbols</label>
+          </div>
+          <button id="generateBtn" class="primary-button" type="button">GENERATE PASSWORD <span>↗</span></button>
+          <div class="generated-wrap"><code id="generated">Your password appears here</code><button id="copyGenerated" class="copy-button" type="button">COPY</button></div>
+          <p id="copyStatus" class="micro-note" aria-live="polite">Generated locally using the browser's cryptographic random generator.</p>
+        </article>
+        <article class="panel privacy">
+          <div class="privacy-icon">◈</div><div><h3>Your password stays yours.</h3><p>This demo analyzes text locally in your browser. It does not upload, save, or transmit the password.</p></div>
+        </article>
+        <article class="panel note">
+          <span class="kicker">SECURITY NOTE</span>
+          <p>Use a unique password for every account and enable multi-factor authentication wherever possible. A password checker cannot guarantee that an account is secure.</p>
+        </article>
+      </aside>
+    </section>
+    <footer> SENTINEL <span>•</span> EDUCATIONAL MINI PROJECT <span>•</span> CLIENT-SIDE DEMO</footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
